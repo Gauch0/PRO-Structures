@@ -1,5 +1,7 @@
 package test;
 
+import api.ColaTDA;
+import implementacion.Cola;
 import metodos.*;
 import api.PilaTDA;
 import implementacion.Pila;
@@ -7,13 +9,19 @@ import implementacion.Pila;
 public class main {
     public static void main(String[] args) {
 
-        EjercicioTP2PA();
+        //EjercicioTP2PA();
         //EjercicioTP2PB();
         //EjercicioTP2PC();
         //EjercicioTP2PD();
         //EjercicioTP2PE();
         //EjercicioTP2PF();
-
+        //EjercicioTP2CP1();
+        //EjercicioTP2CP1();
+        //EjercicioTP2CP2();
+        //EjercicioTP2CP3();
+        //EjercicioTP2CP4();
+        //EjercicioTP2CP5();
+        //EjercicioTP2CP6();
     }
 
 
@@ -120,4 +128,110 @@ public class main {
         System.out.println("- EJERCICIO TP2 F) - Calcular el promedio de los elementos de una Pila ");
         System.out.println("Promedio de los elementos de una pila: " + cantidad);
     }
+
+    public static void EjercicioTP2C(){
+        ColaTDA origen = new Cola();
+        origen.InicializarCola();
+        origen.Acolar(1);
+        origen.Acolar(2);
+        origen.Acolar(3);
+        origen.Acolar(4);
+        origen.Acolar(5);
+        while (!origen.ColaVacia()){
+            System.out.println(origen.Primero() + " ");
+            origen.Desacolar();
+        }
+    }
+
+    public static void EjercicioTP2CP1(){
+        ColaTDA origen = new Cola();
+        ColaTDA destino = new Cola();
+        Metodos m = new Metodos();
+        destino.InicializarCola();
+        origen.InicializarCola();
+        origen.Acolar(1);
+        origen.Acolar(2);
+        origen.Acolar(3);
+        origen.Acolar(4);
+        origen.Acolar(5);
+        m.pasarCola(origen,destino);
+        while (!destino.ColaVacia()){
+            System.out.println(destino.Primero() + " ");
+            destino.Desacolar();
+        }
+    }
+
+    public static void EjercicioTP2CP2(){
+        ColaTDA origen = new Cola();
+        origen.InicializarCola();
+        Metodos m = new Metodos();
+        origen.Acolar(1);
+        origen.Acolar(2);
+        origen.Acolar(3);
+        origen.Acolar(4);
+        origen.Acolar(5);
+        m.invertirColaP(origen);
+
+        while (!origen.ColaVacia()){
+            System.out.println(origen.Primero());
+            origen.Desacolar();
+        }
+    }
+
+    public static void EjercicioTP2CP3(){
+        ColaTDA origen = new Cola();
+        Metodos m = new Metodos();
+        origen.InicializarCola();
+        origen.Acolar(1);
+        origen.Acolar(2);
+        origen.Acolar(3);
+        origen.Acolar(4);
+        origen.Acolar(5);
+        m.invertirCola(origen);
+        while (!origen.ColaVacia()){
+            System.out.println(origen.Primero() + " ");
+            origen.Desacolar();
+        }
+    }
+
+    public static void EjercicioTP2CP4(){
+        ColaTDA origen = new Cola();
+        ColaTDA destino = new Cola();
+        Metodos m = new Metodos();
+        origen.InicializarCola();
+        destino.InicializarCola();
+        destino.Acolar(1);
+        destino.Acolar(2);
+        destino.Acolar(3);
+        destino.Acolar(4);
+        destino.Acolar(6);
+        origen.Acolar(1);
+        origen.Acolar(2);
+        origen.Acolar(3);
+        origen.Acolar(4);
+        origen.Acolar(5);
+        System.out.println(m.colaCoincidencia(origen,destino));
+    }
+
+    public static void EjercicioTP2CP5(){
+        ColaTDA origen = new Cola();
+        origen.InicializarCola();
+        Metodos m = new Metodos();
+        origen.Acolar(0);
+        origen.Acolar(2);
+        origen.Acolar(0);
+        origen.Acolar(0);
+        origen.Acolar(2);
+        origen.Acolar(0);
+        System.out.println(m.colaCapicua(origen));
+    }
+
+    public static void EjercicioTP2CP6(){
+
+    }
+
+
+
+
+
 }
